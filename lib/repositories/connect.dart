@@ -12,7 +12,7 @@ class WispRepository {
       jsonString = await platform.invokeMethod("GET", {
         "url": url,
         "options": {
-          "headers": {}
+          "headers": {"Accept":  "application/vnd.github.v3.full+json"}
         }
       });
       print('RESULT -> $jsonString');
