@@ -1,6 +1,6 @@
 package com.example.common_network.domain.usecases
 
-import com.example.common_network.data.services.RetrofitService
+import com.example.common_network.services.RetrofitService
 import com.example.common_network.domain.entities.RequestBodyEntity
 import com.example.common_network.utils.Gson
 import io.flutter.plugin.common.MethodChannel

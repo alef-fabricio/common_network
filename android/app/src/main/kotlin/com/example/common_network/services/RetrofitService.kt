@@ -1,4 +1,4 @@
-package com.example.common_network.data.services
+package com.example.common_network.services
 
 import okhttp3.ResponseBody
 import retrofit2.Call
