@@ -1,6 +1,7 @@
 package com.example.common_network.utils
 
 import com.example.common_network.domain.entities.RequestBodyEntity
+import com.example.common_network.domain.entities.ResponseDataEntity
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
@@ -11,17 +12,20 @@ class Gson {
     val gson = GsonBuilder().setPrettyPrinting().create()
 
     fun toJson(response: Response<ResponseBody>): String? {
-        return gson.toJson(JsonParser.parseString(response.body()?.string()))
+        return if(response.body() != null){
+            gson.toJson(JsonParser.parseString(response.body()?.string()))
+        }else{
+            ""
+        }
+    }
+
+    fun objectToJson(obj: Object): String? {
+        return gson.toJson(obj)
     }
 
     fun fromMap(map: Map<String, Any>): RequestBodyEntity {
         return map.toDataClass() as RequestBodyEntity
     }
-
-//    fun fromMap(map: HashMap<String, Any>): RequestBodyModel? {
-//        return gson.fromJson(gson.toJsonTree(map), RequestBodyModel::class.java)
-//    }
-
 
     //convert a map to a data class
     inline fun <reified T> Map<String, Any>.toDataClass(): T {

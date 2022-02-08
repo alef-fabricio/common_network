@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<PlaceHolder> placeHolders = [];
 
   void _fetchData() {
-    _repository.get().then((value) {
+    _repository.put().then((value) {
       setState(() {
         placeHolders?.clear();
         placeHolders.addAll(value);

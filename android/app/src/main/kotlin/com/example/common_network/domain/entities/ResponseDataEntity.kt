@@ -5,10 +5,10 @@ data class ResponseDataEntity(
         var method: String? = "",
         var statusCode: Int? = 0,
         var data: String? = "",
-        var error: Error? = Error()
+        var error: ErrorEntity? = ErrorEntity()
 )
 
-data class Error(
-        var message: String = "",
-        var body: String = ""
+data class ErrorEntity(
+        var message: String? = "",
+        var body: String? = ""
 )

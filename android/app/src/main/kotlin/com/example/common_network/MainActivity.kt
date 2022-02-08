@@ -13,7 +13,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 enum class Method {
-    GET, POST, PUT, DELETE
+    GET, POST, PUT, DELETE, PATCH, DOWNLOAD,
 }
 
 class MainActivity : FlutterActivity() {

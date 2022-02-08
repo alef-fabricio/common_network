@@ -2,7 +2,7 @@ package com.example.common_network.domain.entities
 
 data class RequestBodyEntity(
         var url: String,
-        var body: String?,
+        var body: HashMap<String, Any>?,
         var options: Options
 )
 
