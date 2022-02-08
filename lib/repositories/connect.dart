@@ -68,4 +68,43 @@ class WispRepository {
     return placeHolderFromJson(jsonString);
   }
 
+  Future<List<PlaceHolder>> patch() async {
+    var jsonString;
+
+    try {
+      String url = "https://jsonplaceholder.typicode.com/posts/1";
+      jsonString = await platform.invokeMethod("PATCH", {
+        "url": url,
+        "body": {
+          "title": "foo"
+        },
+        "options": {
+          "headers": {'Content-type': 'application/json; charset=UTF-8'}
+        }
+      });
+      print('RESULT -> $jsonString');
+    } on PlatformException catch (e) {
+      print(e);
+    }
+    return placeHolderFromJson(jsonString);
+  }
+
+  Future<List<PlaceHolder>> delete() async {
+    var jsonString;
+
+    try {
+      String url = "https://jsonplaceholder.typicode.com/posts/1";
+      jsonString = await platform.invokeMethod("DELETE", {
+        "url": url,
+        "options": {
+          "headers": {'Content-type': 'application/json; charset=UTF-8'}
+        }
+      });
+      print('RESULT -> $jsonString');
+    } on PlatformException catch (e) {
+      print(e);
+    }
+    return placeHolderFromJson(jsonString);
+  }
+
 }

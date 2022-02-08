@@ -1,10 +1,7 @@
 package com.example.common_network
 
 import androidx.annotation.NonNull
-import com.example.common_network.domain.usecases.DeleteUseCase
-import com.example.common_network.domain.usecases.GetUseCase
-import com.example.common_network.domain.usecases.PostUseCase
-import com.example.common_network.domain.usecases.PutUseCase
+import com.example.common_network.domain.usecases.*
 import com.example.common_network.utils.Gson
 
 import io.flutter.embedding.android.FlutterActivity
@@ -42,6 +39,12 @@ class MainActivity : FlutterActivity() {
             call.method.equals(Method.DELETE.name) -> {
                 DeleteUseCase().delete(requestBody, result)
             }
+            call.method.equals(Method.PATCH.name) -> {
+                PatchUseCase().patch(requestBody, result)
+            }
+//            call.method.equals(Method.DOWNLOAD.name) -> {
+//                DeleteUseCase().download(requestBody, result)
+//            }
         }
     }
 }
